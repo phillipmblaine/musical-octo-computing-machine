@@ -1,0 +1,11 @@
+h2 {
+    text-align: center;
+    background-color: rgb(143, 130, 58);
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin-top: 0;
+}
+
+.about-container {
+    text-align: center;
+}

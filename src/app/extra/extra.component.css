@@ -1,0 +1,12 @@
+h2 {
+    text-align: center;
+    color: rgb(255, 235, 245);
+    background-color: rgba(163, 122, 151, 0.747);
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    margin-top: 0;
+  }
+  
+  .extra-container {
+    text-align: center;
+  }

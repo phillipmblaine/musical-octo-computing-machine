@@ -1,0 +1,61 @@
+h2 {
+  text-align: center;
+  background-color: rgb(120, 167, 153);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.product-scroll-box {
+  width: 90%;
+  height: 20%;
+  /* text-align: center; */
+  margin: auto;
+  overflow: scroll;
+  padding: 2em;
+  border: 6px groove rgb(35, 130, 219);
+  background-color: #353535;
+  color: yellow;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.center-formatting {
+  text-align: center;
+}
+
+.left-formatting {
+  text-align: left;
+}
+
+.ol-container {
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 139, 0.575);
+  border-radius: 2em;
+  padding: 1em;
+}
+
+.product-cards {
+    padding: 1em;
+}
+.page-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  /* width: 100%; */
+  /* padding: 1em 1em 1em 1em; */
+}
+
+.page-buttons button {
+  background-color: gray;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+ol li {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}

@@ -1,0 +1,12 @@
+h2 {
+  text-align: center;
+  color: rgb(255, 231, 188);
+  background-color: rgba(50, 102, 29, 0.747);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.contact-container {
+  text-align: center;
+}

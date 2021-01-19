@@ -1,0 +1,147 @@
+h2 {
+  color: whitesmoke;
+  text-align: center;
+  background-color: slateblue;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+}
+
+button {
+  /* padding-top: 1em;
+      padding-bottom: 1em;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      margin: 1em; */
+  background-color: rgba(128, 128, 128, 0.521);
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    rgba(0, 0, 0, 0.04)
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.15),
+    0 1px 0 0 rgba(255, 255, 255, 0.15);
+  /* text-shadow: 0 1px rgba(255, 255, 255, 0.4); */
+  text-shadow: 0 1px rgba(22, 20, 20, 0.4);
+}
+
+button:hover {
+  background-color: rgba(85, 0, 255, 0.612);
+  transition: 0.1s;
+}
+
+p {
+  font-size: 2.2em;
+  font-weight: bold;
+  padding-top: 0.30em;
+  padding-bottom: 0.30em;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.calculator {
+  background-color: #383838;
+  border: 2px inset darkorchid;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  max-width: 120px;
+  /* width: 30%; */
+  margin: 0 auto;
+  padding-top: 0.15em;
+  padding-left: 0.10em;
+  padding-right: 0.10em;
+  padding-bottom: 0.10em;
+}
+
+.calculator-screen {
+  width: 90%;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: 1px;
+  text-align: right;
+}
+
+.calculator-keys {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.calculator-data {
+  font-size: 0.5em;
+}
+
+.operator {
+  color: rgb(0, 255, 42);
+}
+.operator:hover {
+  background-color: rgba(255, 119, 0, 0.877);
+}
+
+.all-clear {
+  background-color: rgba(139, 0, 0, 0.726);
+}
+
+.all-clear:hover {
+  background-color: rgba(255, 85, 235, 0.849);
+}
+
+.equal-sign {
+  background-color: rgba(35, 126, 126, 0.74);
+}
+
+.equal-sign:hover {
+  background-color: rgb(0, 251, 255);
+}
+
+.redText {
+  color: red;
+  /* text-shadow: 1px 1px 1px black; */
+  /* text-shadow: 1px 1px 1px rgb(0, 0, 0); */
+  text-shadow: 1px 1px 1px rgb(116, 0, 0);
+  background-color: rgb(58, 58, 58);
+}
+
+.blueText {
+  color: rgb(0, 102, 255);
+  /* text-shadow: 1px 1px 2px black; */
+  text-shadow: 1px 1px 1px rgb(0, 0, 136);
+  background-color: rgba(0, 14, 41, 0.733);
+}
+
+.orangeText {
+  color: rgb(255, 102, 0);
+  text-shadow: 1px 1px 1px rgb(153, 41, 0);
+  background-color: rgb(41, 41, 41);
+}
+
+.purpleText {
+  color: rgb(247, 53, 247);
+  text-shadow: 1px 1px 1px rgb(88, 0, 88);
+  background-color: rgba(28, 0, 29, 0.733);
+}
+
+.currentNumberZero {
+  color: white;
+  background-color: black;
+}
+
+.currentNumberNotZero {
+  color: rgb(255, 208, 0);
+  text-shadow: 1px 1px 1px black;
+  background-color: rgba(61, 61, 61, 0.733);
+}
