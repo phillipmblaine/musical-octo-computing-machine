@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SupportComponent } from './support.component';
+import { NameEditorComponent } from './name-editor.component';
 
-describe('SupportComponent', () => {
-  let component: SupportComponent;
-  let fixture: ComponentFixture<SupportComponent>;
+describe('NameEditorComponent', () => {
+  let component: NameEditorComponent;
+  let fixture: ComponentFixture<NameEditorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SupportComponent]
+      declarations: [NameEditorComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SupportComponent);
+    fixture = TestBed.createComponent(NameEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

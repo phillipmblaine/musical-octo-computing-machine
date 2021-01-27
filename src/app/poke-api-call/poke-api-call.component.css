@@ -1,41 +1,25 @@
 h2 {
   text-align: center;
   color: rgb(255, 235, 245);
-  background-color: rgba(163, 122, 151, 0.747);
+  background-color: rgba(255, 0, 0, 0.466);
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   margin-top: 0;
 }
 
-.extra-container {
+.poke-api-call-container {
   text-align: center;
   /* justify-content: center; */
   margin: 0 auto;
 }
-.extra-container ul {
+.poke-api-call-container ul {
   list-style-type: none;
   list-style-position: inside;
   padding: 0;
 }
 
-.mat-select-container {
-  margin: 0 auto;
-  text-align: center;
-  background: rgb(54, 163, 52);
-  width: 80%;
-  border-radius: 4em;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
-}
-
-.mat-select-container mat-form-field {
-  background-color: orange;
-  padding: 1em 4em;
-  border-radius: 4em;
-}
-
 #poke-api-call-button {
-  background-color: rgba(255, 0, 0, 0.466);
+  background-color: rgba(255, 0, 0, 0.315);
   color: white;
 }
 

@@ -1,17 +1,22 @@
-<mat-toolbar color="primary">
-  <h1>
-    <!-- ngStore -->
-    Example Angular Store
-  </h1>
+<mat-toolbar color="primary" class='first-navbar'>
+  <h2> Angular </h2>
+
   <div class='nav-buttons'>
     <button class="home-button" mat-button routerLink="/home">Home</button>
     <button class='about-button' mat-button routerLink="/about">About</button>
-    <button class='calculator-button' mat-button routerLink='/calculator'>Calculator</button>
-    <button class='extra-button' mat-button routerLink='/extra'>Extra</button>
     <button class='contact-button' mat-button routerLink='/contact'>Contact</button>
     <button class='support-button' mat-button routerLink='/support'>Support</button>
   </div>
+</mat-toolbar>
 
+<mat-toolbar class='second-navbar'>
+  <div class='nav-buttons'>
+    <button class='calculator-button' mat-button routerLink='/calculator'>Calculator</button>
+    <button class='poke-api-call-button' mat-button routerLink='/poke-api-call'>PokeApiCall</button>
+    <button class='name-editor-button' mat-button routerLink='/name-editor'>Name Editor</button>
+    <button class='profile-editor-button' mat-button routerLink='/profile-editor'>Profile Editor</button>
+    <button class='extra-button' mat-button routerLink='/extra'>Extra</button>
+  </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

@@ -1,0 +1,40 @@
+<h2>PokeApiCall</h2>
+
+<div class='poke-api-call-container'>
+    <div>
+        <button id='poke-api-call-button' mat-stroked-button (click)="callPokemon()">Click Me</button>
+    </div>
+    <ul *ngIf='this.pokeApiCall !== null'>
+        <li>ID: {{this.pokeApiCall.id}}</li>
+        <br>
+        <li>Name: {{this.pokeApiCall.name | uppercase }}</li>
+        <br>
+
+        <div *ngIf="this.pokeApiCall.sprites.front_default !== null">
+            <img src={{this.pokeApiCall.sprites.front_default}} alt='front-default' />
+            <img src={{this.pokeApiCall.sprites.front_shiny}} alt='front-shiny' />
+        </div>
+
+        <div *ngIf='this.pokeApiCall.types.length !== null'>
+            Type 1
+            <ul>
+                <li>Type Name: {{this.pokeApiCall.types[0].type.name | uppercase }}</li>
+            </ul>
+        </div>
+
+        <br>
+
+        <div *ngIf='this.pokeApiCall.types.length === 2'>Type 2
+            <ul>
+                <li>Type Name: {{this.pokeApiCall.types[1].type.name | uppercase }}</li>
+            </ul>
+            <br>
+        </div>
+
+        <li>Height: {{this.pokeApiCall.height / 10}} Meters</li>
+        <br>
+        <li>Weight: {{this.pokeApiCall.weight / 10}} Kilograms</li>
+        <br>
+        <li>Base Experience: {{this.pokeApiCall.base_experience}} Experience Points</li>
+    </ul>
+</div>

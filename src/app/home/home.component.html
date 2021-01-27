@@ -2,7 +2,7 @@
 
 <h2>Home</h2>
 
-<div class='product-scroll-box center-formatting'>
+<div *ngIf='products.length !== 0' class='product-scroll-box center-formatting'>
     <p>Scroll box meant to handle overflow content.</p>
     <p>A list for the products shown below this scroll box.</p>
 
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class='page-buttons'>
+<div *ngIf='products.length !== 0' class='page-buttons'>
     <button (click)="firstPage()" mat-button> First</button>
     <button (click)="previousPage()" mat-button> Previous</button>
     <button (click)="nextPage()" mat-button> Next</button>
@@ -27,7 +27,10 @@
 </div>
 
 <div class='product-cards'>
-    <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+    <div class='awaiting-products-container' *ngIf='products.length === 0'>
+        <p>Awaiting Products</p>
+        <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+    </div>
 
     <mat-card *ngFor="let product of products" style="margin-top:10px;">
         <mat-card-header>
@@ -39,16 +42,18 @@
             <p>
                 {{product.description}}
             </p>
-            <img style="height:30%; width: 30%;" src="{{ product.imageUrl }}" alt='product-image' />
+            <div class='product-image-formatting'>
+                <img style="height:50%; width: 50%;" src="{{ product.imageUrl }}" alt='product-image' />
+            </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button> Buy product</button>
+            <button mat-raised-button> Buy product</button>
         </mat-card-actions>
     </mat-card>
 
 </div>
 
-<div class='page-buttons'>
+<div *ngIf='products.length !== 0' class='page-buttons'>
     <button (click)="firstPage()" mat-button> First</button>
     <button (click)="previousPage()" mat-button> Previous</button>
     <button (click)="nextPage()" mat-button> Next</button>

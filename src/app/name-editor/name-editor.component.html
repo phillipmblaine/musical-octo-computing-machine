@@ -1,0 +1,17 @@
+<h2>Name Editor</h2>
+
+<div class='name-editor-container'>
+
+    <label>
+        <p>Name</p>
+        <!-- [] component to view -->
+        <input type='text' [formControl]='name'>
+    </label>
+
+    <br>
+    <br>
+
+    <button mat-raised-button (click)="randomUpdates()">Random Update Name</button>
+    <p class='show'>Update Name: {{name.value}}</p>
+    <p class='show'>Random Number 0-100: {{numOne}}</p>
+</div>

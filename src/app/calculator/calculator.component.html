@@ -1,13 +1,9 @@
-<!-- <p>calculator works!</p> -->
-
 <h2>Calculator</h2>
 
 <div class="calculator">
-
     <input type="text" class="calculator-screen" [value]="currentNumber" disabled />
 
     <div class="calculator-keys">
-
         <button type="button" (click)="getOperation('+')" class="operator" value="+">+</button>
         <button type="button" (click)="getOperation('-')" class="operator" value="-">-</button>
         <button type="button" (click)="getOperation('*')" class="operator" value="*">&times;</button>
@@ -30,15 +26,13 @@
         <button type="button" (click)="getDecimal()" class="decimal" value=".">.</button>
         <button type="button" (click)="clear()" class="all-clear" value="all-clear">AC</button>
         <button type="button" (click)="getOperation('=')" class="equal-sign" value="=">=</button>
-
     </div>
 </div>
 
 <br>
 
 <div class="calculator-data">
-    <!-- do i need to use this keyword? -->
-    <p [className]="this.checkNullOperand()">First Operand: {{this.firstOperandStatus}}</p>
+    <p [className]="this.checkNullOperand">First Operand: {{this.firstOperandStatus}}</p>
     <p [className]="this.checkNullOperator()">Currently Selected Operator: {{this.operatorStatus}}</p>
     <p [className]="this.checkCurrentNumber()">Current Number: {{this.currentNumber}}</p>
 </div>

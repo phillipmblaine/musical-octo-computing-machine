@@ -4,24 +4,22 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 
-import { Product } from './product';
+// import { Product } from './product';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class DataService {
-
   constructor(private httpClient: HttpClient) { }
 
   public first: string = '';
   public prev: string = '';
   public next: string = '';
   public last: string = '';
-
   private REST_API_SERVER = "http://localhost:3000";
 
-  parseLinkHeader(header) {
+  public parseLinkHeader(header): void {
     if (header.length === 0) {
       return;
     }
@@ -39,7 +37,8 @@ export class DataService {
     this.next = links['next'];
   }
 
-  handleError(error: HttpErrorResponse) {
+  // not sure how to type the error? Observable<never>
+  public handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
       // Client-side errors
@@ -52,7 +51,8 @@ export class DataService {
     return throwError(errorMessage);
   }
 
-  public sendGetRequest() {
+  // not sure how to type? Observable<unknown>
+  public sendGetRequest(): any {
     // add safe URL encoded_page parameter
     // options, HttpParams and fromString returns first page of 20 products
 
@@ -71,7 +71,8 @@ export class DataService {
         }));
   }
 
-  public sendGetRequestToUrl(url: string) {
+  // Not sure how to type? Observable<HttpResponse<Object>>
+  public sendGetRequestToUrl(url: string): any {
     return this.httpClient.get(url, { observe: 'response' })
       .pipe(retry(3), catchError(this.handleError),
         tap(res => {

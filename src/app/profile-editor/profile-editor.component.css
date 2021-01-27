@@ -1,0 +1,253 @@
+h2 {
+  text-align: center;
+  color: rgb(255, 235, 245);
+  background-color: rgba(187, 70, 134, 0.562);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+}
+
+h4 {
+  text-align: center;
+  color: rgb(255, 235, 245);
+  background-color: rgb(168, 76, 0);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  width: 90%;
+  margin: 0.6em auto;
+  border: 4px solid rgba(0, 0, 0, 0.425);
+  border-radius: 30px 0 30px 0;
+}
+
+.profile-editor-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.profile-editor-container p {
+  margin: 0.4em auto;
+}
+
+.profile-editor-container input {
+  color: rgb(255, 211, 66);
+  font-size: 0.9em;
+  background-color: rgba(106, 0, 116, 0.63);
+  padding: 0.5em 0.6em;
+  border-radius: 0.5em;
+  border: 4px inset rgb(186, 0, 56);
+  transition: 0.3s;
+}
+
+.profile-editor-container input:focus {
+  background-color: black;
+  color: magenta;
+  border-color: rgb(167, 79, 255);
+  outline: none;
+}
+
+.show {
+  font-size: 0.8em;
+  text-align: center;
+  color: rgb(255, 174, 0);
+  background-color: rgba(28, 28, 28, 0.699);
+  width: 80%;
+  border-radius: 3em;
+  border: 5px outset rgba(174, 78, 0, 0.966);
+  margin: 0 auto;
+}
+
+.profile-editor-container button {
+  /* margin-top: 1em; */
+  background-color: rgba(28, 28, 28, 0.699);
+  color: tomato;
+  margin-bottom: 0;
+}
+
+.invalid-submit-button {
+  background-color: darkred;
+}
+
+.profile-editor-container button:hover {
+  background-color: rgba(137, 43, 226, 0.664);
+  color: hotpink;
+}
+
+.profile-editor-container button:active {
+  color: white;
+  background-color: black;
+  transition: 0.02s;
+}
+.change-values-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  width: 80%;
+  align-items: center;
+  margin: 0.8em auto auto auto;
+}
+
+.change-values-buttons > button:first-child {
+  color: gold;
+  background-color: rgba(0, 128, 0, 0.5);
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.change-values-buttons > button:first-child:hover {
+  color: cyan;
+  background-color: darkcyan;
+}
+
+.change-values-buttons > button:first-child:active {
+  color: royalblue;
+  background-color: midnightblue;
+}
+
+.change-values-buttons > button:nth-of-type(2) {
+  color: palevioletred;
+  background-color: rgba(30, 0, 255, 0.56);
+}
+
+.change-values-buttons > button:nth-of-type(2):hover {
+  color: rgb(255, 0, 85);
+  background-color: rgb(89, 0, 255);
+}
+
+.change-values-buttons > button:nth-of-type(2):active {
+  color: rgb(255, 178, 143);
+  background-color: rgb(255, 72, 0);
+}
+
+.change-values-buttons > button:last-child {
+  color: crimson;
+  background-color: black;
+  /* font-weight: bold; */
+}
+
+.change-values-buttons > button:last-child:hover {
+  color: black;
+  background-color: crimson;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.change-values-buttons > button:last-child:active {
+  color: rgb(255, 208, 0);
+  background-color: rgb(95, 0, 0);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.06s;
+}
+
+.toast-buttons-container {
+  outline: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.toast-buttons {
+  padding: 0.3em;
+  border-radius: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  transition: 0.1s;
+  border: 3px solid rgba(0, 0, 0, 0.541);
+}
+
+.toast-buttons-container > button:first-child {
+  background-color: royalblue;
+  color: white;
+}
+
+.toast-buttons-container > button:first-child:hover {
+  background-color: midnightblue;
+}
+
+.toast-buttons-container > button:first-child:active {
+  background-color: black;
+  color: royalblue;
+  transition: 0.06s;
+}
+
+.toast-buttons-container > button:nth-of-type(2) {
+  background-color: darkred;
+  color: white;
+}
+
+.toast-buttons-container > button:nth-of-type(2):hover {
+  background-color: rgb(201, 0, 0);
+}
+
+.toast-buttons-container > button:nth-of-type(2):active {
+  background-color: black;
+  color: tomato;
+  transition: 0.06s;
+}
+
+.toast-buttons-container > button:nth-of-type(3) {
+  background-color: teal;
+  color: white;
+}
+
+.toast-buttons-container > button:nth-of-type(3):hover {
+  background-color: rgb(0, 185, 185);
+}
+
+.toast-buttons-container > button:nth-of-type(3):active {
+  background-color: black;
+  color: teal;
+  transition: 0.06s;
+}
+
+.toast-buttons-container > button:nth-of-type(4) {
+  background-color: burlywood;
+  color: black;
+}
+
+.toast-buttons-container > button:nth-of-type(4):hover {
+  background-color: rgb(255, 176, 73);
+}
+
+.toast-buttons-container > button:nth-of-type(4):active {
+  background-color: black;
+  color: rgb(255, 176, 73);
+  transition: 0.06s;
+}
+
+.toast-buttons-container > button:last-child {
+  background-color: black;
+  color: crimson;
+}
+
+.toast-buttons-container > button:last-child:hover {
+  text-transform: uppercase;
+  background-color: rgb(56, 0, 0);
+}
+
+.toast-buttons-container > button:last-child:active {
+  background-color: firebrick;
+  color: black;
+}
+
+.toast-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.toast-checkboxes label {
+  padding-left: 1em;
+}

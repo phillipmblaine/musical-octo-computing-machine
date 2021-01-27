@@ -1,0 +1,85 @@
+<h2>Profile Editor</h2>
+<alert></alert>
+<div class='profile-editor-container'>
+    <form [formGroup]='profileForm' (ngSubmit)='onSubmit()'>
+        <label>
+            <p>First Name:</p>
+            <input type='text' formControlName='firstName' autocomplete='new-password' placeholder='First Name'
+                required>
+        </label>
+
+        <label>
+            <p>Last Name:</p>
+            <input type='text' formControlName='lastName' autocomplete='new-password' placeholder='Last Name' required>
+        </label>
+        <div formGroupName='address'>
+            <label>
+                <p>Street:</p>
+                <input type='text' formControlName='street' autocomplete='new-password' placeholder='Street' required>
+            </label>
+            <label>
+                <p>City:</p>
+                <input type='text' formControlName='city' autocomplete='new-password' placeholder='City' required>
+            </label>
+            <label>
+                <p>State:</p>
+                <input type='text' formControlName='state' autocomplete='new-password' placeholder='State' required>
+            </label>
+            <label>
+                <p>Zip:</p>
+                <input type='text' formControlName='zip' autocomplete='new-password' placeholder='Zip' required>
+            </label>
+        </div>
+        <!-- Do I need to use label for with formGroups? -->
+
+        <div class='change-values-buttons'>
+            <button mat-raised-button (click)='handleProfileFormSubmit()' type='submit'
+                [disabled]='!profileForm.valid'>Submit</button>
+            <button mat-raised-button (click)="updateProfile()">Update Profile</button>
+            <button mat-raised-button (click)="setAddressValues()">Set Address Values</button>
+            <button mat-raised-button (click)="clearForm()">Clear Form</button>
+        </div>
+    </form>
+
+    <br>
+    <div class='toast-buttons-container'>
+        <button class="toast-buttons btn-success" (click)="alertService.success('Success!!', options)">Success</button>
+        <button class="toast-buttons btn-danger" (click)="alertService.error('Error :(', options)">Error</button>
+        <button class="toast-buttons btn-info" (click)="alertService.info('Some info....', options)">Info</button>
+        <button class="toast-buttons btn-warning" (click)="alertService.warn('Warning: ...', options)">Warn</button>
+        <button class="toast-buttons btn-outline-dark" (click)="alertService.clear()">Clear</button>
+    </div>
+
+    <div class="form-group toast-checkboxes">
+        <div class="form-check">
+            <input type="checkbox" name="autoClose" id="autoClose" class="form-check-input"
+                [(ngModel)]="options.autoClose">
+            <label for="autoClose">Auto Close Toasts After 3 Seconds</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" name="keepAfterRouteChange" id="keepAfterRouteChange" class="form-check-input"
+                [(ngModel)]="options.keepAfterRouteChange">
+            <label for="keepAfterRouteChange">Display After One Route Change</label>
+        </div>
+    </div>
+
+    <h4>Current Values of Name</h4>
+    <div>
+        <p class='show'>First Name: {{profileForm.value.firstName}}<span
+                *ngIf="profileForm.value.firstName === ''">please type your first name</span></p>
+        <p class='show'>Last Name: {{profileForm.value.lastName}}<span *ngIf="profileForm.value.lastName === ''">please
+                type your last name</span></p>
+    </div>
+
+    <h4>Current Values of Address</h4>
+    <div>
+        <p class='show'>Street: {{profileForm.value.address.street}}<span
+                *ngIf="profileForm.value.address.street === ''">please type your street</span></p>
+        <p class='show'>City: {{profileForm.value.address.city}}<span
+                *ngIf="profileForm.value.address.city === ''">please type your city</span></p>
+        <p class='show'>State: {{profileForm.value.address.state}}<span
+                *ngIf="profileForm.value.address.state === ''">please type your state</span></p>
+        <p class='show'>Zip: {{profileForm.value.address.zip}}<span *ngIf="profileForm.value.address.zip === ''">please
+                type your zip code</span></p>
+    </div>
+</div>

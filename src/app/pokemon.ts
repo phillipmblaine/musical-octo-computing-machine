@@ -1,7 +1,7 @@
 export interface Pokemon {
-    abilities: any;
+    // abilities: any;
     base_experience: number;
-    forms: any;
+    // forms: any;
     // game_indicies: any;
     height: number;
     // held_items: any[];

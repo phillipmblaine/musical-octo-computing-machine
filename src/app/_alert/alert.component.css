@@ -1,0 +1,66 @@
+.alert-container {
+  padding: 1em;
+  font-size: 1em;
+  border: 4px solid rgba(0, 0, 0, 0.438);
+  border-radius: 4em;
+  font-weight: bold;
+  /* margin-bottom: 0.8em; */
+}
+
+.alert-container button {
+  border: 4px solid darkgray;
+  border-radius: 4em;
+  padding: 0.8em;
+  outline: none;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.alert-container button:hover {
+  color: rgb(255, 203, 30);
+  border-color: rgb(255, 203, 30);
+  background-color: #2020206c;
+}
+
+.alert-container button:active {
+  color: fuchsia;
+  border-color: rgb(194, 39, 255);
+  background-color: black;
+  transition: 0.02s;
+}
+
+.alert-success {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: royalblue;
+  width: 90%;
+  margin: auto auto 0.5em auto;
+}
+
+.alert-danger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkred;
+  width: 90%;
+  margin: auto auto 0.5em auto;
+}
+
+.alert-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  width: 90%;
+  margin: auto auto 0.5em auto;
+}
+
+.alert-warning {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: burlywood;
+  width: 90%;
+  margin: auto auto 0.5em auto;
+}

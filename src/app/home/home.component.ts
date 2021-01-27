@@ -14,7 +14,9 @@ import { Product } from '../product';
 })
 
 export class HomeComponent implements OnInit, OnDestroy {
-  constructor(private dataService: DataService) { }
+  // When typing with DataService, there is warning/error?
+  // Is this proper typing?
+  constructor(public dataService: DataService) { }
 
   products: Product[] = [];
   destroy$: Subject<boolean> = new Subject<boolean>();

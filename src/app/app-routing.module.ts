@@ -6,6 +6,9 @@ import { ContactComponent } from './contact/contact.component';
 import { SupportComponent } from './support/support.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ExtraComponent } from './extra/extra.component';
+import { PokeApiCallComponent } from './poke-api-call/poke-api-call.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 
 const routes: Routes = [
@@ -13,9 +16,15 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'calculator', component: CalculatorComponent },
+  { path: 'poke-api-call', component: PokeApiCallComponent },
+  { path: 'name-editor', component: NameEditorComponent },
+  { path: 'profile-editor', component: ProfileEditorComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'support', component: SupportComponent },
-  { path: 'extra', component: ExtraComponent }
+  { path: 'extra', component: ExtraComponent },
+
+  // redirect to home
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({

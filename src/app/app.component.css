@@ -51,10 +51,52 @@ mat-toolbar {
 }
 
 .extra-button {
-  background-color: rgb(97, 97, 97);  
+  background-color: rgb(97, 97, 97);
 }
 
 .extra-button:hover {
   background-color: rgb(116, 116, 116);
   transition: 0.2s;
+}
+
+.name-editor-button {
+  background-color: rgb(18, 84, 0);
+}
+
+.name-editor-button:hover {
+  background-color: rgb(32, 147, 0);
+  transition: 0.2s;
+}
+
+.poke-api-call-button {
+  background-color: rgba(160, 0, 0, 0.575);
+  color: white;
+}
+
+.poke-api-call-button:hover {
+  background-color: rgba(255, 0, 0, 0.781);
+  transition: 0.2s;
+}
+
+.profile-editor-button {
+  background-color: rgba(187, 70, 134, 0.733);
+  color: white;
+}
+
+.profile-editor-button:hover {
+  background-color: rgb(187, 70, 135);
+  transition: 0.2s;
+}
+
+.first-navbar {
+  min-width: 540px;
+  max-width: 100%;
+}
+
+.second-navbar {
+  background: #3f51b5a4;
+  color: white;
+  justify-content: center;
+  min-width: 540px;
+  max-width: 100%;
 }

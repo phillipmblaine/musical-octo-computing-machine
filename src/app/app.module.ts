@@ -9,8 +9,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertModule } from './_alert';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -18,6 +20,12 @@ import { ContactComponent } from './contact/contact.component';
 import { SupportComponent } from './support/support.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ExtraComponent } from './extra/extra.component';
+
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { PokeApiCallComponent } from './poke-api-call/poke-api-call.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +35,10 @@ import { ExtraComponent } from './extra/extra.component';
     ContactComponent,
     SupportComponent,
     CalculatorComponent,
-    ExtraComponent
+    ExtraComponent,
+    NameEditorComponent,
+    PokeApiCallComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +49,14 @@ import { ExtraComponent } from './extra/extra.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    AlertModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

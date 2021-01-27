@@ -1,0 +1,59 @@
+h2 {
+  text-align: center;
+  color: rgb(255, 235, 245);
+  background-color: rgb(13, 60, 0);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-top: 0;
+}
+
+.name-editor-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.name-editor-container p {
+  margin-bottom: 0.4em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  /* color: white; */
+}
+
+.name-editor-container button {
+  margin-bottom: 1em;
+}
+
+.name-editor-container button:hover {
+  background-color: gray;
+  color: ghostwhite;
+}
+
+.name-editor-container button:active {
+  color: white;
+  background-color: black;
+  transition: 0.02s;
+}
+
+.name-editor-container input {
+  margin: 0.1em 0.7em;
+}
+
+.name-editor-container input {
+  color: rgb(222, 151, 255);
+  font-size: 1.5em;
+  background-color: rgb(73, 0, 116);
+  padding: 0.5em 0.6em;
+  border-radius: 0.5em;
+  border: 4px inset rgb(0, 204, 0);
+}
+
+.show {
+  font-size: 2em;
+  text-align: center;
+  color: rgb(255, 174, 0);
+  background-color: rgba(28, 28, 28, 0.699);
+  width: 80%;
+  border-radius: 3em;
+  border: 5px outset rgba(174, 110, 0, 0.966);
+  margin: 0 auto;
+}
