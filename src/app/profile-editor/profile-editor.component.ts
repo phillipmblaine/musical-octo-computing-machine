@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AlertService } from '../_alert';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+// difference between FormArray and other forms?
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -8,7 +12,7 @@ import { AlertService } from '../_alert';
   styleUrls: ['./profile-editor.component.css']
 })
 
-// not quite sure how to type the ProfileForm
+// not quite sure how to type the ProfileForm 
 // interface ProfileForm {
 //   firstName: FormControl,
 //   lastName: FormControl,
@@ -21,23 +25,48 @@ import { AlertService } from '../_alert';
 // }
 
 export class ProfileEditorComponent implements OnInit {
-  constructor(public alertService: AlertService) { }
+  constructor(public alertService: AlertService, private fb: FormBuilder) { }
 
   options = {
     autoClose: false,
     keepAfterRouteChange: false
   }
 
-  profileForm: FormGroup = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
-    })
-  });
+  public profileForm = this.fb.group({
+    // good practice to use Validators in combination with html5 input validation
+    firstName: ['', Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: [''],
+    }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
+  })
+
+  public get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  public addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
+
+  // difference between formBuilder and manually creating each form element?
+
+  // profileForm: FormGroup = new FormGroup({
+  //   firstName: new FormControl(''),
+  //   lastName: new FormControl(''),
+  //   address: new FormGroup({
+  //     street: new FormControl(''),
+  //     city: new FormControl(''),
+  //     state: new FormControl(''),
+  //     zip: new FormControl('')
+  //   })
+  // });
 
   public handleProfileFormSubmit(): void {
     console.log(this.profileForm.value);
@@ -47,15 +76,17 @@ export class ProfileEditorComponent implements OnInit {
   // difference between setValue, patchValue? How to get setValue to work
   // setValue requires all values to be filled out?
   public setAddressValues(): void {
+    // setValue, the items below must match the typing of what you are setting, including the number of aliases
     this.profileForm.setValue({
-      firstName: 'Superman',
+      firstName: 'SUPERMAN',
       lastName: 'Kent',
       address: {
         street: '123 Krypton Planet',
         city: 'Metropolis',
         state: 'Krypton',
         zip: '3.1415'
-      }
+      },
+      aliases: ['General Zod']
     });
     // this.profileForm.value.street.setValue('21 Jump Street');
     // this.profileForm.value.city.setValue('Earth');
@@ -78,17 +109,42 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   public clearForm(): void {
+    // this.initializeAliases();
+    this.clearProfile();
+    // this.profileForm.patchValue({
+    //   aliases: this.aliases.push(this.fb.control(''))
+    // })
+    console.log(typeof(this.profileForm.value.firstName))
+  }
+
+  public clearProfile(): void {
+    // this.cfa(this.profileForm.value.aliases)
+    this.aliases.clear();
+    this.addAlias();
     this.profileForm.setValue({
       firstName: '',
       lastName: '',
-      address: {
+      address: ({
         street: '',
         city: '',
         state: '',
-        zip: ''
-      }
+        zip: '',
+      }),
+      // aliases: this.aliases.clear()
+      aliases: ['']
     });
+    console.log(this.profileForm.value.aliases)
   }
+
+  // public cfa = (formArray: FormArray) => {
+  //   while (formArray.length !== 0) {
+  //     formArray.removeAt(0)
+  //   }
+  // }
+
+  // public initializeAliases(): void {
+  //   this.aliases.push(this.fb.control(''))
+  // }
 
   public onSubmit(): void {
     // TODO: Use EventEmitter with form value
@@ -98,5 +154,7 @@ export class ProfileEditorComponent implements OnInit {
   public ngOnInit(): void {
     console.log('options ->', this.options);
     console.log('alertService ->', this.alertService);
+    console.log(this.profileForm.value.aliases);
+    console.log(typeof (this.profileForm.value.aliases[0]));
   }
 }

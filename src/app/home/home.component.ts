@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log('Home Component');
 
     this
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     this.destroy$.next(true);
     // Unsubscribe from the subject
     this.destroy$.unsubscribe();

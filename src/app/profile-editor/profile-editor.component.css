@@ -238,7 +238,7 @@ h4 {
 
 .toast-checkboxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 80%;
   padding: 0.5em;
   border-radius: 1em;
@@ -250,4 +250,39 @@ h4 {
 
 .toast-checkboxes label {
   padding-left: 1em;
+}
+
+.display-aliases {
+  background-color: rgba(61, 26, 26, 0.521);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80%;
+  justify-content: center;
+  margin: auto auto auto auto;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.display-aliases p {
+  text-align: center;
+  background-color: rgb(60, 47, 107);
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  border-radius: 1em;
+  color: aqua;
+}
+
+.display-aliases span {
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.display-aliases mat-card {
+  width: 20vw;
+  padding: 0.2em;
+  word-wrap: wrap;
 }
