@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokeApiCallComponent } from './poke-api-call.component';
 
 describe('PokeApiCallComponent', () => {
@@ -8,9 +7,9 @@ describe('PokeApiCallComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokeApiCallComponent ]
+      declarations: [PokeApiCallComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

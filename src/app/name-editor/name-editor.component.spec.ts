@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NameEditorComponent } from './name-editor.component';
 
 describe('NameEditorComponent', () => {

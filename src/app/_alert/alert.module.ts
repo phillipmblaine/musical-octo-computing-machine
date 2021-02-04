@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AlertComponent } from './alert.component';
 
 @NgModule({
@@ -8,4 +7,5 @@ import { AlertComponent } from './alert.component';
     declarations: [AlertComponent],
     exports: [AlertComponent]
 })
+
 export class AlertModule { }

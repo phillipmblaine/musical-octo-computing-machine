@@ -2,9 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../data.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
 import { HttpResponse } from '@angular/common/http';
-
 import { Product } from '../product';
 
 @Component({
@@ -14,15 +12,12 @@ import { Product } from '../product';
 })
 
 export class HomeComponent implements OnInit, OnDestroy {
-  // When typing with DataService, there is warning/error?
-  // Is this proper typing?
   constructor(public dataService: DataService) { }
 
-  products: Product[] = [];
-  destroy$: Subject<boolean> = new Subject<boolean>();
+  public products: Product[] = [];
+  public destroy$: Subject<boolean> = new Subject<boolean>();
 
-  // perhaps this functionality could be put into a separate component and inherited?
-  public firstPage() {
+  public firstPage(): void {
     this.products = [];
     this.dataService.sendGetRequestToUrl(this.dataService.first).pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<Product[]>) => {
       console.log(res);
@@ -30,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  public previousPage() {
+  public previousPage(): void {
     if (this.dataService.prev !== undefined && this.dataService.prev !== '') {
       this.products = [];
       this.dataService.sendGetRequestToUrl(this.dataService.prev).pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<Product[]>) => {
@@ -40,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-  public nextPage() {
+  public nextPage(): void {
     if (this.dataService.next !== undefined && this.dataService.next !== '') {
       this.products = [];
       this.dataService.sendGetRequestToUrl(this.dataService.next).pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<Product[]>) => {
@@ -50,7 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-  public lastPage() {
+  public lastPage(): void {
     this.products = [];
     this.dataService.sendGetRequestToUrl(this.dataService.last).pipe(takeUntil(this.destroy$)).subscribe((res: HttpResponse<Product[]>) => {
       console.log(res);
@@ -58,7 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     console.log('Home Component');
 
     this
@@ -69,17 +64,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         console.log(res);
         this.products = res.body;
       })
-
-    // setTimeout(() => console.log(this.products), 5000)
-
-    // setTimeout(() => console.log(this.dataService.sendGetRequest().subscribe((a: any[]) => {
-    //   console.log(a);
-    // }
-    // )), 3000)
-
   }
 
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     this.destroy$.next(true);
     // Unsubscribe from the subject
     this.destroy$.unsubscribe();

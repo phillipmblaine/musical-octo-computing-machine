@@ -40,7 +40,6 @@
             </div>
             <button (click)='addAlias()'>Add Alias</button>
         </div>
-        <!-- Do I need to use label for with formGroups? -->
 
         <div class='change-values-buttons'>
             <button mat-raised-button (click)='handleProfileFormSubmit()' type='submit'
@@ -66,11 +65,6 @@
                 [(ngModel)]="options.autoClose">
             <label for="autoClose">Auto Close Toasts After 3 Seconds</label>
         </div>
-        <!-- <div class="form-check">
-            <input type="checkbox" name="keepAfterRouteChange" id="keepAfterRouteChange" class="form-check-input"
-                [(ngModel)]="options.keepAfterRouteChange">
-            <label for="keepAfterRouteChange">Display After One Route Change</label>
-        </div> -->
     </div>
 
     <h4>Current Values of Name</h4>
@@ -92,7 +86,7 @@
         <p class='show'>Zip: {{profileForm.value.address.zip}}<span *ngIf="profileForm.value.address.zip === ''">please
                 type your zip code</span></p>
     </div>
-    
+
     <div class='display-aliases'>
         <span *ngIf="profileForm.value.aliases[0] === ''">please
             add an alias</span>

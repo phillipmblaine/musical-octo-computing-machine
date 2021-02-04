@@ -9,7 +9,6 @@ h2 {
 
 .poke-api-call-container {
   text-align: center;
-  /* justify-content: center; */
   margin: 0 auto;
 }
 .poke-api-call-container ul {
@@ -33,5 +32,4 @@ h2 {
   color: yellow;
   background-color: rgb(26, 0, 56);
   transition: 0.01s;
-  /* padding: 1em 4em; */
 }

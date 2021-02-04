@@ -10,14 +10,15 @@ export class CalculatorComponent implements OnInit {
 
   constructor() { }
 
-  currentNumber: string = '0';
-  firstOperand: null | string | number = null;
-  firstOperandStatus: null | string | number = null;
-  operator: null | string = null;
-  operatorStatus: null | string | number = null;
-  waitForSecondNumber: boolean = false;
+  public currentNumber: string = '0';
+  public firstOperand: null | string | number = null;
+  public firstOperandStatus: null | string | number = null;
+  public operator: null | string = null;
+  public operatorStatus: null | string | number = null;
+  public waitForSecondNumber: boolean = false;
 
-  public getNumber(v: string) {
+  public getNumber(v: string): void {
+    console.log('calculator -> getNumber(string): void');
     if (this.waitForSecondNumber) {
       this.currentNumber = v;
       this.waitForSecondNumber = false;
@@ -28,7 +29,8 @@ export class CalculatorComponent implements OnInit {
     this.displayOperatorStatus();
   }
 
-  public getOperation(op: string) {
+  public getOperation(op: string): void {
+    console.log('calculator -> getOperation(string): void');
     if (this.firstOperand === null) {
       this.firstOperand = Number(this.currentNumber);
     } else if (this.operator) {
@@ -43,7 +45,8 @@ export class CalculatorComponent implements OnInit {
     this.displayOperatorStatus();
   }
 
-  public clear() {
+  public clear(): void {
+    console.log('calculator -> clear(): void');
     this.currentNumber = '0';
     this.firstOperand = null;
     this.operator = null;
@@ -52,7 +55,8 @@ export class CalculatorComponent implements OnInit {
     this.displayOperatorStatus();
   }
 
-  private doCalculation(op: string, secondOp: number) {
+  private doCalculation(op: string, secondOp: number): number {
+    console.log('calculator -> doCalculation(string, number): number');
     if (typeof (this.firstOperand) === 'number') {
       switch (op) {
         case '+':
@@ -70,16 +74,18 @@ export class CalculatorComponent implements OnInit {
   }
 
   public displayFirstOperandStatus(): void {
+    console.log('calculator -> displayFirstOperandStatus(): void');
     if (this.firstOperand === null) {
       this.firstOperandStatus = "First operand is null."
     } else {
-      if (typeof(this.firstOperand) === 'number' && typeof(this.firstOperandStatus) === 'number') {
-        this.firstOperandStatus = this.firstOperand;
-      }
+      this.firstOperandStatus = this.firstOperand;
     }
+    console.log('firstOperand:', this.firstOperand);
+    console.log('firstOperandStatus:', this.firstOperandStatus);
   }
 
   public displayOperatorStatus(): void {
+    console.log('calculator -> displayOperatorStatus(): void');
     if (this.operator === null) {
       this.operatorStatus = "Operator is null."
     } else {
@@ -88,6 +94,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   public getDecimal(): void {
+    console.log('calculator -> getDecimal(): void');
     if (!this.currentNumber.includes('.')) {
       this.currentNumber += '.';
     }
@@ -102,7 +109,7 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
-  public checkNullOperator(): string {
+  public get checkNullOperator(): string {
     if (this.operator === null) {
       return 'orangeText';
     } else {
@@ -110,7 +117,7 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
-  public checkCurrentNumber(): string {
+  public get checkCurrentNumber(): string {
     if (this.currentNumber === '0') {
       return 'currentNumberZero';
     } else {
@@ -123,6 +130,4 @@ export class CalculatorComponent implements OnInit {
     this.displayFirstOperandStatus();
     this.displayOperatorStatus();
   }
-
-
 }
