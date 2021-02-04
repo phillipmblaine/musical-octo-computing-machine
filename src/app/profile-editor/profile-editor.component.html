@@ -38,17 +38,20 @@
                     <input type='text' [formControlName]='i' placeholder='Alias'>
                 </label>
             </div>
-            <button (click)='addAlias()'>Add Alias</button>
         </div>
+        <br>
 
-        <div class='change-values-buttons'>
-            <button mat-raised-button (click)='handleProfileFormSubmit()' type='submit'
-                [disabled]='!profileForm.valid'>Submit (Form Status: <span>{{profileForm.status}}</span>)</button>
-            <button mat-raised-button (click)="updateProfile()">Update Profile</button>
-            <button mat-raised-button (click)="setAddressValues()">Set Address Values</button>
-            <button mat-raised-button (click)="clearForm()">Clear Form</button>
-        </div>
+        <button mat-raised-button type='submit' id='submit' class='sb' value='Submit'
+            [disabled]='!profileForm.valid'>Submit (Form
+            Status: <span>{{profileForm.status}}</span>)</button>
     </form>
+
+    <div class='change-values-buttons'>
+        <button mat-raised-button (click)='addAlias()'>Add Alias</button>
+        <button mat-raised-button (click)="updateProfile()">Update Profile</button>
+        <button mat-raised-button (click)="setAddressValues()">Set Address Values</button>
+        <button mat-raised-button (click)="clearForm()">Clear Form</button>
+    </div>
 
     <br>
     <div class='toast-buttons-container'>

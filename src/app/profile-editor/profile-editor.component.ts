@@ -3,6 +3,7 @@ import { AlertService } from '../_alert';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-editor',
@@ -11,7 +12,7 @@ import { FormArray } from '@angular/forms';
 })
 
 export class ProfileEditorComponent implements OnInit {
-  constructor(public alertService: AlertService, private fb: FormBuilder) { }
+  constructor(public alertService: AlertService, private fb: FormBuilder, private router: Router) { }
 
   public options = {
     autoClose: false,
@@ -20,12 +21,12 @@ export class ProfileEditorComponent implements OnInit {
 
   public profileForm = this.fb.group({
     firstName: ['', Validators.required],
-    lastName: [''],
+    lastName: ['', Validators.required],
     address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: [''],
+      street: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zip: ['', Validators.required],
     }),
     aliases: this.fb.array([
       this.fb.control('')
@@ -41,7 +42,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   public setAddressValues(): void {
-    console.log('profile-editor -> setAddressValues():');
+    console.log('profile-editor -> setAddressValues(): void');
     this.profileForm.setValue({
       firstName: 'SUPERMAN',
       lastName: 'Kent',
@@ -56,7 +57,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   public updateProfile(): void {
-    console.log('profile-editor -> updateProfile():');
+    console.log('profile-editor -> updateProfile(): void');
     this.profileForm.patchValue({
       firstName: 'Batman',
       address: {
@@ -67,7 +68,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   public clearProfile(): void {
-    console.log('profile-editor -> clearProfile():');
+    console.log('profile-editor -> clearProfile(): void');
     this.aliases.clear();
     this.addAlias();
     this.profileForm.setValue({
@@ -84,13 +85,21 @@ export class ProfileEditorComponent implements OnInit {
     console.log(this.profileForm.value);
   }
 
+  public clearForm(): void {
+    console.log('profile-editor -> clearForm(): void');
+    this.clearProfile();
+    console.log(typeof (this.profileForm.value.firstName))
+  }
+
   public onSubmit(): void {
-    console.log('profile-editor -> onSubmit():');
+    console.log('profile-editor -> onSubmit(): void');
     console.warn(this.profileForm.value);
+    alert('Profile Editor Submission Success');
+    this.router.navigate(['/home']);
   }
 
   public ngOnInit(): void {
-    console.log('profile-editor -> ngOnInit():');
+    console.log('profile-editor -> ngOnInit(): void');
 
     // get, valueChanges
     this.profileForm.get('firstName').valueChanges.subscribe(

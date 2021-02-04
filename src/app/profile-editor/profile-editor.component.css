@@ -79,7 +79,7 @@ h4 {
 }
 .change-values-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
   width: 80%;
@@ -88,33 +88,45 @@ h4 {
 }
 
 .change-values-buttons > button:first-child {
-  color: gold;
-  background-color: rgba(0, 128, 0, 0.5);
-  grid-column-start: 1;
-  grid-column-end: 4;
+  background-color: rgb(63, 0, 39);
+  color: rgb(173, 54, 120);
 }
 
 .change-values-buttons > button:first-child:hover {
+  background-color: rgb(94, 39, 69);
+  color: palevioletred;
+}
+.change-values-buttons > button:first-child:active {
+  background-color: pink;
+  color: hotpink;
+}
+
+.change-values-buttons > button:nth-of-type(2) {
+  color: rgb(166, 255, 0);
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.change-values-buttons > button:nth-of-type(2):hover {
   color: cyan;
   background-color: darkcyan;
 }
 
-.change-values-buttons > button:first-child:active {
+.change-values-buttons > button:nth-of-type(2):active {
   color: royalblue;
   background-color: midnightblue;
 }
 
-.change-values-buttons > button:nth-of-type(2) {
+.change-values-buttons > button:nth-of-type(3) {
   color: palevioletred;
   background-color: rgba(30, 0, 255, 0.56);
 }
 
-.change-values-buttons > button:nth-of-type(2):hover {
+.change-values-buttons > button:nth-of-type(3):hover {
   color: rgb(255, 0, 85);
   background-color: rgb(89, 0, 255);
 }
 
-.change-values-buttons > button:nth-of-type(2):active {
+.change-values-buttons > button:nth-of-type(3):active {
   color: rgb(255, 178, 143);
   background-color: rgb(255, 72, 0);
 }
@@ -122,7 +134,6 @@ h4 {
 .change-values-buttons > button:last-child {
   color: crimson;
   background-color: black;
-  /* font-weight: bold; */
 }
 
 .change-values-buttons > button:last-child:hover {
@@ -285,4 +296,8 @@ h4 {
   width: 20vw;
   padding: 0.2em;
   word-wrap: wrap;
+}
+
+#sb {
+  width: 225px;
 }
