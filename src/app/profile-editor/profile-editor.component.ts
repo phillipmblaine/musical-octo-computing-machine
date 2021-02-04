@@ -156,5 +156,13 @@ export class ProfileEditorComponent implements OnInit {
     console.log('alertService ->', this.alertService);
     console.log(this.profileForm.value.aliases);
     console.log(typeof (this.profileForm.value.aliases[0]));
+
+    
+    // valueChanges -> hook into the event
+    this.profileForm.get('firstName').valueChanges.subscribe(
+      (value) => {
+        console.log('get firstName:', value)
+      }
+    )
   }
 }
